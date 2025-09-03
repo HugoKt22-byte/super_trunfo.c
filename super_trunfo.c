@@ -10,6 +10,8 @@ int main (){
     float areakm1;
     float pib1;
     int pontosturisticos1;
+    int densidadepopulacional1;
+    int pibpercapita1;
 
 //variáveis 2 carta
 
@@ -19,10 +21,12 @@ int main (){
     int populacao2;
     float areakm2;
     float pib2;
+    int densidadepopulacional2;
+    int pibpercapita2;
 
     /*Banco de dados da primeira carta*/
 
-    printf ("Insira os dados para a Carta N1\n");
+    printf ("Insira os dados para a Carta N¹\n");
     printf ("Estado (A-H): "); 
     scanf ("  %c", &estado1);
 
@@ -47,7 +51,7 @@ int main (){
     printf ("Estado (A-H)");
     scanf ("  %c", &estado2);
 
-    printf ("Código da carta (exA01): \n");
+    printf ("Código da carta (exB01): \n");
     scanf ("%s", codigo2);
 
     printf ("Nome da cidade: \n");
@@ -61,18 +65,32 @@ int main (){
 
     printf ("PIB (em bilhões): \n");
     scanf ("%f", &pib2);
+                        /*Adicionando Densidade Populacional E PIB per Capita*/
 
+    float densidade1, densidade2, pib3, pib4;
+
+        /*CARTA N¹*/
+    densidade1 = populacao1 / areakm1;
+    pib3 = pib1 / populacao1;
+
+        /*CARTA N²*/
+    densidade2 = populacao2 / areakm2;
+    pib4 = pib2 / populacao2;
                                         //Dados da Carta N¹ e N²
 
-    printf ("Carta N°1\n");
+    printf ("Carta N¹ \n");
     printf ("Estado: %c Código da Carta: %s Nome da Cidade: %s\n", estado1, codigo1, cidade1);
-    printf ("População: %d Área em Km²: %f PIB: %f\n", populacao1, areakm1, pib1);
-
-    printf ("Carta N°2\n");
+    printf ("População: %d\nÁrea em Km²: \n%f PIB: %f\n", populacao1, areakm1, pib1);
+    printf ("Densidade Populacional %.6f\n", densidade1);
+    printf ("PIB per Capita: %.9f\n", pib3);
+    
+    printf ("Carta N² \n");
     printf ("Estado: %c Código da Carta: %s Nome da Cidade: %s\n", estado2, codigo2, cidade2);
-    printf ("População: %d Área em Km²: %f PIB: %f\n", populacao2, areakm2, pib2);
+    printf ("População: %d\nÁrea em Km²: %f\nPIB: %f\n", populacao2, areakm2, pib2);
+    printf ("Densidade Populacional %.6f\n", densidade2);
+    printf ("PIB per Capita: %.9f\n", pib4);
 
     //Hugo Felipe Matrícula : 2025 0892 3701
 
-
+    return 0;
 }
