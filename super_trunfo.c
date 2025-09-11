@@ -120,6 +120,15 @@ int main (){
     printf ("Pontos turísticos: Carta 1 venceu %d\n", pontosturisticos1 > pontosturisticos2);
     printf ("Super Poder: Carta 1 venceu %d\n", superpoder1 > superpoder2);
 
+printf  ("Carta 1 população: %d\n", populacao1);
+printf ("Carta 2 população: %d\n", populacao2);
+
+if (populacao1 > populacao2){
+    printf ("Carta 1 venceu!");
+} else {
+    printf ("Carta 2 venceu!");
+}
+
 
     //Hugo Felipe Matrícula : 2025 0892 3701
 
