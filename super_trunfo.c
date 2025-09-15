@@ -25,7 +25,7 @@ int main (){
     int densidadepopulacional2;
     float pibpercapita2;
 
-    /*Banco de dados da primeira carta*/
+    //Banco de dados da primeira carta
 
     printf ("Insira os dados para a Carta N¹\n");
     printf ("Estado (A-H): "); 
@@ -73,15 +73,15 @@ int main (){
     printf ("Pontos turísticos: \n");
     scanf ("%d", &pontosturisticos2);
 
-                        /*Adicionando Densidade Populacional E PIB per Capita*/
+                        //Adicionando Densidade Populacional E PIB per Capita/
 
     float densidade1, densidade2, pib3, pib4;
 
-        /*CARTA N¹*/
+        //CARTA N¹
     densidade1 = populacao1 / areakm1;
     pib3 = pib1 / populacao1;
 
-        /*CARTA N²*/
+        //CARTA N²
     densidade2 = populacao2 / areakm2;
     pib4 = pib2 / populacao2;
 
@@ -92,7 +92,7 @@ int main (){
 
 
                                         //Dados da Carta N¹ e N²
-
+/*
     printf ("Carta N¹ \n");
     printf ("Estado: %c Código da Carta: %s Nome da Cidade: %s\n", estado1, codigo1, cidade1);
     printf ("População: %d\nÁrea em Km²: \n%f PIB: %f\n", populacao1, areakm1, pib1);
@@ -120,15 +120,98 @@ int main (){
     printf ("Pontos turísticos: Carta 1 venceu %d\n", pontosturisticos1 > pontosturisticos2);
     printf ("Super Poder: Carta 1 venceu %d\n", superpoder1 > superpoder2);
 
+
 printf  ("Carta 1 população: %d\n", populacao1);
-printf ("Carta 2 população: %d\n", populacao2);
+printf ("Carta 2 população: %d\n", populacao2); 
 
 if (populacao1 > populacao2){
     printf ("Carta 1 venceu!");
 } else {
     printf ("Carta 2 venceu!");
 }
+*/
 
+//USO DO SWITCH PARA O JOGADOR ESCOLHER QUAL ATRIBUTO
+
+int opcao;
+
+printf("###Escolha umas das opções de atributo a ser comparado###\n");
+printf("1-População\n");
+printf("2-Área\n");
+printf("3-Pib\n");
+printf("4-Pontos Turisticos\n");
+printf("5-Densidade Demográfica(Menor Vence)\n");
+scanf("%d", &opcao);
+
+switch(opcao){
+case 1:
+if (populacao1 > populacao2){
+printf("Jogador 1 venceu\n");
+printf("Jogador 1 População: %d\n", populacao1);
+printf("Jogador 2 Populacao: %d\n", populacao2);
+} else if (populacao2 > populacao1) {
+printf("Jogador 2 venceu\n");
+printf("Jogador 2 População: %d\n", populacao2);
+printf("Jogador 1 Populacao: %d\n", populacao1);
+} else {
+printf("Empate\n");
+}
+break;
+case 2:
+if (areakm1 > areakm2){
+printf("Jogador 1 venceu\n");
+printf("Jogador 1 Área: %f\n", areakm1);
+printf("Jogador 2 Área: %f\n", areakm2);
+} else if (areakm2 > areakm1) {
+printf("Jogador 2 venceu\n");
+printf("Jogador 2 Área: %f\n", areakm2);
+printf("Jogador 1 Área: %f\n", areakm1);
+} else {
+printf("Empate\n");
+}
+break;
+case 3:
+if (pib1 > pib2){
+printf("Jogador 1 venceu\n");
+printf("Jogador 1 PIB: %f\n", pib1);
+printf("Jogador 2 PIB: %f\n", pib2);
+} else if (pib2 > pib1) {
+printf("Jogador 2 venceu\n");
+printf("Jogador 2 PIB: %f\n", pib2);
+printf("Jogador 1 PIB: %f\n", pib1);
+} else {
+printf("Empate\n");
+}
+break;
+case 4:
+if (pontosturisticos1 > pontosturisticos2){
+printf("Jogador 1 venceu\n");
+printf("Jogador 1 Pontos Turisticos: %d\n", pontosturisticos1);
+printf("Jogador 2 Pontos Turísticos: %d\n", pontosturisticos2);
+} else if (pontosturisticos2 > pontosturisticos1) {
+printf("Jogador 2 venceu\n");
+printf("Jogador 2 Pontos Turisticos: %d\n", pontosturisticos2);
+printf("Jogador 1 Pontos Turísticos: %d\n", pontosturisticos1);
+} else {
+printf("Empate\n");
+}
+break;
+case 5:
+if (densidade1 < densidade2){
+printf("Jogador 1 venceu\n");
+printf("Jogador 1 Densidade Demográfica: %f\n", densidade1);
+printf("Jogador 2 Densidade Demográfica: %f\n", densidade2);
+} else if (densidade2 < densidade1) {
+printf("Jogador 2 venceu\n");
+printf("Jogador 2 Densidade Demográfica: %f\n", densidade2);
+printf("Jogador 1 Densidade Demográfica: %f\n", densidade1);
+} else {
+printf("Empate\n");
+}
+break;
+default:
+printf("Opção inválida!\n");
+}
 
     //Hugo Felipe Matrícula : 2025 0892 3701
 
