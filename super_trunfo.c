@@ -131,87 +131,94 @@ if (populacao1 > populacao2){
 }
 */
 
-//USO DO SWITCH PARA O JOGADOR ESCOLHER QUAL ATRIBUTO
 
-int opcao;
+/*populacao1 = 1;
+populacao2 = 0;
+areakm1 = 1;
+areakm2 = 0;
+pib1 = 1;
+pib2 = 0;                     //ESSA PARTE COMENTADA ESTAVA ME PREJUDICANDO
+pontosturisticos1 = 1;
+pontosturisticos2 = 0;
+densidade1 = 0;
+densidade2 = 1;
+*/
+int opcao1;
+int opcao2;
+int resultado1 = 0;
+int resultado2 = 0;
 
-printf("###Escolha umas das opções de atributo a ser comparado###\n");
-printf("1-População\n");
-printf("2-Área\n");
-printf("3-Pib\n");
-printf("4-Pontos Turisticos\n");
-printf("5-Densidade Demográfica(Menor Vence)\n");
-scanf("%d", &opcao);
+printf("Agora vamos fazer a comparação de dois atributos e ver quem ganhou?\n");
+printf("Escolha o primeiro atributo:\n");
+printf("1 - População\n");
+printf("2 - Área\n");
+printf("3 - PIB\n");
+printf("4 - Pontos Turísticos\n");
+printf("5 - Densidade Demográfica\n");
+scanf("%d", &opcao1);
 
-switch(opcao){
+printf("Escolha o segundo atributo (diferente do primeiro):\n");
+printf("1 - População\n");
+printf("2 - Área\n");
+printf("3 - PIB\n");
+printf("4 - Pontos Turísticos\n");
+printf("5 - Densidade Demográfica\n");
+scanf ("%d", &opcao2);
+
+switch (opcao1)
+{
 case 1:
-if (populacao1 > populacao2){
-printf("Jogador 1 venceu\n");
-printf("Jogador 1 População: %d\n", populacao1);
-printf("Jogador 2 Populacao: %d\n", populacao2);
-} else if (populacao2 > populacao1) {
-printf("Jogador 2 venceu\n");
-printf("Jogador 2 População: %d\n", populacao2);
-printf("Jogador 1 Populacao: %d\n", populacao1);
-} else {
-printf("Empate\n");
-}
-break;
+resultado1 = (populacao1 > populacao2) ? 1 : (populacao1 < populacao2 ? 2 : 0);
+  break;
 case 2:
-if (areakm1 > areakm2){
-printf("Jogador 1 venceu\n");
-printf("Jogador 1 Área: %f\n", areakm1);
-printf("Jogador 2 Área: %f\n", areakm2);
-} else if (areakm2 > areakm1) {
-printf("Jogador 2 venceu\n");
-printf("Jogador 2 Área: %f\n", areakm2);
-printf("Jogador 1 Área: %f\n", areakm1);
-} else {
-printf("Empate\n");
-}
-break;
-case 3:
-if (pib1 > pib2){
-printf("Jogador 1 venceu\n");
-printf("Jogador 1 PIB: %f\n", pib1);
-printf("Jogador 2 PIB: %f\n", pib2);
-} else if (pib2 > pib1) {
-printf("Jogador 2 venceu\n");
-printf("Jogador 2 PIB: %f\n", pib2);
-printf("Jogador 1 PIB: %f\n", pib1);
-} else {
-printf("Empate\n");
-}
-break;
-case 4:
-if (pontosturisticos1 > pontosturisticos2){
-printf("Jogador 1 venceu\n");
-printf("Jogador 1 Pontos Turisticos: %d\n", pontosturisticos1);
-printf("Jogador 2 Pontos Turísticos: %d\n", pontosturisticos2);
-} else if (pontosturisticos2 > pontosturisticos1) {
-printf("Jogador 2 venceu\n");
-printf("Jogador 2 Pontos Turisticos: %d\n", pontosturisticos2);
-printf("Jogador 1 Pontos Turísticos: %d\n", pontosturisticos1);
-} else {
-printf("Empate\n");
-}
-break;
-case 5:
-if (densidade1 < densidade2){
-printf("Jogador 1 venceu\n");
-printf("Jogador 1 Densidade Demográfica: %f\n", densidade1);
-printf("Jogador 2 Densidade Demográfica: %f\n", densidade2);
-} else if (densidade2 < densidade1) {
-printf("Jogador 2 venceu\n");
-printf("Jogador 2 Densidade Demográfica: %f\n", densidade2);
-printf("Jogador 1 Densidade Demográfica: %f\n", densidade1);
-} else {
-printf("Empate\n");
-}
-break;
+resultado1 = (areakm1 > areakm2) ? 1 : (areakm1 < areakm2 ? 2 : 0);
+  break;
+  case 3:
+resultado1 = (pib1 > pib2) ? 1 : (pib1 < pib2 ? 2 : 0);
+  break;
+  case 4:
+resultado1 = (pontosturisticos1 > pontosturisticos2) ? 1 : (pontosturisticos1 < pontosturisticos2 ? 2 : 0);
+  break;
+  case 5:
+resultado1 = (densidade1 < densidade2) ? 1 : (densidade1 > densidade2 ? 2 : 0);
+  break;
 default:
-printf("Opção inválida!\n");
+  break;
 }
+
+switch (opcao2){
+case 1:
+resultado2 = (populacao1 > populacao2) ? 1 : (populacao1 < populacao2 ? 2 : 0);
+  break;
+case 2:
+resultado2 = (areakm1 > areakm2) ? 1 : (areakm1 < areakm2 ? 2 : 0);
+  break;
+  case 3:
+resultado2 = (pib1 > pib2) ? 1 : (pib1 < pib2 ? 2 : 0);
+  break;
+  case 4:
+resultado2 = (pontosturisticos1 > pontosturisticos2) ? 1 : (pontosturisticos1 < pontosturisticos2 ? 2 : 0);
+  break;
+  case 5:
+resultado2 = (densidade1 < densidade2) ? 1 : (densidade1 > densidade2 ? 2 : 0);
+  break;
+default:
+  break;
+}
+
+if (opcao1 == opcao2) {
+printf("Você escolheu o mesmo atributo, escolha novamente!\n");
+} else if (resultado1 == 1 && resultado2 == 1) {
+  printf ("Player 1 venceu :D\n");
+} else if (resultado1 == 2 && resultado2 == 2){
+  printf ("Player 2 venceu :D\n");
+} else if ((resultado1 == 1 && resultado2 == 2) || (resultado2 == 2 && resultado1 == 1)){
+  printf ("Cada jogador venceu um atributo, empate!");
+} else {
+  printf ("Empate\n");
+}
+
+
 
     //Hugo Felipe Matrícula : 2025 0892 3701
 
